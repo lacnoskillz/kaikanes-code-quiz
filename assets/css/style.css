@@ -1,0 +1,35 @@
+body {
+    font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
+    margin: 2px;
+    background-color: #7ac3e7;
+  }
+  h1{
+    
+  }
+  .container {
+    margin-top: 10vw;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    display: block;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 0 100px 80px 0 rgba(0,0,0,0.2);
+    width: 80vw;
+    background-color: #d6c795;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  
+  .button-center{
+    text-align: center;
+    
+   }
+
+   .START{
+    width: 200px;
+    height: 60px;
+   }
+  
+  
+
+  
