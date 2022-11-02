@@ -13,8 +13,8 @@ To test knowledge and gauge progress compared to others
 * Zoom
 #### Screen shot
 ***
-![image]()
+![image](./assets/images/ScreenshotCodingquiz.png)
 ##### Link
 ***
 click for deployed app
-[click me]()
+[click me](https://lacnoskillz.github.io/kaikanes-code-quiz/)
