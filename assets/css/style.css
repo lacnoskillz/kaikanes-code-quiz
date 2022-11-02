@@ -3,7 +3,12 @@ body {
     margin: 2px;
     background-color: #7ac3e7;
   }
-  h1{
+  h3{
+    position: fixed; 
+    top:10px;
+    font-size: 60px;
+    background-color: #fcfcfc;
+    display: inline-block;
     
   }
   .container {
@@ -29,7 +34,20 @@ body {
     width: 200px;
     height: 60px;
    }
+   .hide {display:none;}
   
-  
+   .answerbox{
+    text-align: center;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    
+   }
+   button{
+    height: 100px;
+    width: 100px;
+   }
 
   
