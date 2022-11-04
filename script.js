@@ -5,6 +5,9 @@ hideanswerbox();
 function hideanswerbox() {
     element = document.querySelector('.answerbox');
     element.style.visibility = 'hidden';
+    
+    grabber = document.querySelector('.namegraber');
+    grabber.style.visibility = 'hidden';
 }
 //declaring variables and arrays
 var h1 = document.getElementById("toptext");
@@ -29,6 +32,7 @@ originalquestion = questionasked.innerHTML;
 
 //runs this game on start click
 function startgame() {
+    //hides h1 and start button upon click
     h1.style.visibility = "hidden";
     btn.disabled = true;
     const startScreen = document.getElementById('start')
@@ -42,9 +46,6 @@ function startgame() {
     //timer
 
     var timeEl = document.querySelector(".time");
-
-
-    //var mainEl = document.getElementById("maintimer");
 
     var secondsLeft = 20;
 
@@ -71,8 +72,8 @@ function startgame() {
     }
 
     setTime();
+    //runs set question function
     setquestion();
-
     //function to go through array questions and make answers display in the "answerbox" depending on which question is asked
     function setquestion() {
 
@@ -145,9 +146,8 @@ function startgame() {
 
 
     }
-    // trying to make score go up with correct button press and make next question show on inncorrect button press
-    //stoped here
-    console.log("score", score);
+    //buttons that make the next question appear and add to your score or take 5 sec away from timer depening on answer
+    //BOX.A event listener
     boxA.addEventListener("click", function () {
 
         if ((z == 0) && (secondsLeft > 0)) {
@@ -234,7 +234,7 @@ function startgame() {
 
 
 
-
+//starts game on start button click
 btn.addEventListener("click", function () {
     startgame();
 
@@ -242,9 +242,15 @@ btn.addEventListener("click", function () {
 })
 
 function highscore() {
+    //reset pp text to blank
     pp.textContent = "";
-    questionasked.innerHTML = ("Your score:",score);
-    localStorage.setItem("playerscore", score);
+    questionasked.textContent= ("Your score: "+ score);
+    
+    
+    grabber = document.querySelector('.namegraber');
+    grabber.style.visibility = 'visible';
+    //localStorage.setItem("playerscore", score);
+
 
 }
 //namegraber.addEventListener("")
