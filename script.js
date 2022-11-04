@@ -1,18 +1,20 @@
 
-//makes "answerbox invisible"
 
+
+var grabber = document.getElementById("namegraber1");
+grabber.setAttribute('class', 'hide');
+
+//makes "answerbox invisible"
 hideanswerbox();
 function hideanswerbox() {
     element = document.querySelector('.answerbox');
     element.style.visibility = 'hidden';
-    
-    grabber = document.querySelector('.namegraber');
-    grabber.setAttribute('class', 'hide');
-    //grabber.classList.add('hide');
+
+
 }
 //declaring variables and arrays
 var h1 = document.getElementById("toptext");
-var playername = document.getElementById("namegraber");
+var playername = document.getElementById("namegraber1");
 var hr = document.getElementById("line");
 var pp = document.getElementById("pee");
 var boxA = document.getElementById("buttonA");
@@ -30,10 +32,11 @@ questions = ["what is 1+1?", "what planet are we on?", "how old am i?", "which a
 var score = 0
 var z = 0;
 originalquestion = questionasked.innerHTML;
-
 //runs this game on start click
 function startgame() {
     //hides h1 and start button upon click
+    z = 0;
+    score = 0;
     h1.style.visibility = "hidden";
     btn.disabled = true;
     const startScreen = document.getElementById('start')
@@ -77,7 +80,7 @@ function startgame() {
     setquestion();
     //function to go through array questions and make answers display in the "answerbox" depending on which question is asked
     function setquestion() {
-
+        
         if ((z > 3) || (secondsLeft <= 0)) {
 
             hideanswerbox();
@@ -173,7 +176,7 @@ function startgame() {
         if ((z == 2) && (secondsLeft > 0)) {
             score++;
             z++;
-        
+
             pp.textContent = "Correct!";
             console.log("correct! score:", score);
             setquestion();
@@ -240,19 +243,55 @@ btn.addEventListener("click", function () {
     startgame();
 
 
-})
+});
 
 function highscore() {
     //reset pp text to blank
     pp.textContent = "";
-    questionasked.textContent= ("Your score: "+ score);
-    
-    
-    //grabber = document.querySelector('.namegraber');
-    grabber.removeAttribute('class');
-    //grabber.classList.remove('hide');
-    //localStorage.setItem("playerscore", score);
+    questionasked.textContent = ("Your score: " + score);
 
+
+
+    grabber.removeAttribute('class');
+    grabber.setAttribute('class', 'namegraber');
 
 }
-//namegraber.addEventListener("")
+//trying to make highscore list
+grabber.addEventListener("submit", getname);
+function getname(event) {
+event.preventDefault();
+    userinput = document.getElementById("name");
+
+
+    var player;
+    player = userinput.value
+    if ((player.length > 3) || (player.length == 0)) {
+        alert("initials must be 1-3 charecters");
+        userinput.value = 0;
+        return;
+    } 
+    //localStorage.setItem("playerscore and initials", JSON.stringify(player));
+listmaker();
+
+
+
+function listmaker() {
+    //makes form namegrabber visible
+    var grabber = document.getElementById("namegraber1");
+grabber.setAttribute('class', 'hide');
+    //creates <ul> <li> for user input and score then displays it
+    scorelist = document.getElementById("highscore");
+    var listEl = document.createElement("ul");
+    scorelist.appendChild(listEl);
+    var li1 = document.createElement("li");
+    li1.textContent = (player + " score: " + score);
+    listEl.appendChild(li1);
+    
+    questionasked.textContent = ("press start to play again");
+    btn.disabled = false;
+    const startScreen = document.getElementById('start')
+    startScreen.classList.remove('hide')
+  
+
+}
+};

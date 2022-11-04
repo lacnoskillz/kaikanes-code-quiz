@@ -66,12 +66,23 @@ body {
    }
    .namegraber{
     font-size: 50px;
+    position:fixed;
+    bottom: 50%;
     
-    position: absolute;
     right: 50%;
-    top:33%;
+    z-index: 1;
+    background-color: #d6c795;
+    
     
    
+   }
+   .highscorelist{
+    position: absolute;
+    top: 70%;
+    right: 45%;
+    display: block;
+    background-color: aliceblue;
+    
    }
    /*#buttonA{
     background-color:green;
