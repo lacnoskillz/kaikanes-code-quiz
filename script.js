@@ -7,7 +7,8 @@ function hideanswerbox() {
     element.style.visibility = 'hidden';
     
     grabber = document.querySelector('.namegraber');
-    grabber.style.visibility = 'hidden';
+    grabber.setAttribute('class', 'hide');
+    //grabber.classList.add('hide');
 }
 //declaring variables and arrays
 var h1 = document.getElementById("toptext");
@@ -247,8 +248,9 @@ function highscore() {
     questionasked.textContent= ("Your score: "+ score);
     
     
-    grabber = document.querySelector('.namegraber');
-    grabber.style.visibility = 'visible';
+    //grabber = document.querySelector('.namegraber');
+    grabber.removeAttribute('class');
+    //grabber.classList.remove('hide');
     //localStorage.setItem("playerscore", score);
 
 
