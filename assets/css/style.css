@@ -3,11 +3,11 @@ body {
     margin: 2px;
     background-color: #7ac3e7;
   }
-  h3{
+  h2{
     position: fixed; 
     top:10px;
     font-size: 60px;
-    background-color: #fcfcfc;
+    color: red;
     display: inline-block;
     
   }
@@ -49,11 +49,11 @@ body {
     margin-bottom: 20px;
     margin-top: 20px;
     flex-basis: 40%;
-    
+  
    }
    button{
     height: 80px;
-    width: 80px;
+    width: 400px;
    }
    p{
     text-align: center;
@@ -78,19 +78,35 @@ body {
    }
    .highscorelist{
     position: absolute;
-    top: 70%;
+    top: 41%;
     right: 45%;
     display: block;
-    background-color: aliceblue;
-    
+    background-color:#d6c795;
+    margin: 10px;
+    padding: 10px;
+    /*font-size: 50px;*/
    }
-   /*#buttonA{
-    background-color:green;
-   }*/
 
-  /*p {
-    display: grid;
-    font-size: 50px;
-   }*/
+
+   @media screen and (max-width: 550px){
+    .highscorelist{
+      position: absolute;
+      /*bottom: 90%;*/
+      right: 4px;
+    }
+    .namegraber{
+      position: absolute;
+      right: 5px;
+      bottom: 10px;
+      
+    }
+    h2{
+      position: absolute;
+      top: 5px;
+      font-size: 50px;
+      
+    }
+   }
+ 
 
   
