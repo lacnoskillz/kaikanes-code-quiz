@@ -6,9 +6,10 @@ body {
   h2{
     position: fixed; 
     top:10px;
-    font-size: 60px;
+    font-size: 30px;
     color: red;
     display: inline-block;
+    background-color: black;
     
   }
   h1{
@@ -77,8 +78,8 @@ body {
    
    }
    .highscorelist{
-    position: absolute;
-    top: 41%;
+    position: fixed;
+    top: 51%;
     right: 45%;
     display: block;
     background-color:#d6c795;
